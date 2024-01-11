@@ -2,13 +2,12 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import TvIcon from '@mui/icons-material/Tv';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import PropTypes from 'prop-types'
+import CompletionStatusDropdown from './CompletionStatusDropDown';
 
 const BacklogItem = ({ backlogItem }) => {
   return (
@@ -23,9 +22,7 @@ const BacklogItem = ({ backlogItem }) => {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <CompletionStatusDropdown backlogItem={backlogItem} />
         }
         title={backlogItem.title}
         subheader={backlogItem.user.username}
